@@ -14,7 +14,7 @@ func main() {
 	// Define CLI options
 	app := cli.New("generate secure passwords from a simple passphrase").
 		WithArg(cli.NewArg("passphrase", "input passphrase").AsOptional()).
-		WithOption(cli.NewOption("version", "override PassGen version").WithChar('v').WithType(cli.TypeInt)).
+		WithOption(cli.NewOption("version", "override passgen algorithm version").WithChar('v').WithType(cli.TypeInt)).
 		WithOption(cli.NewOption("salt", "salt appended to passphrase, default env[PASSGEN_SALT]").WithChar('s').WithType(cli.TypeString)).
 		WithOption(cli.NewOption("length", "password length, default 40 or env[PASSGEN_LENGTH]").WithChar('l').WithType(cli.TypeInt)).
 		WithOption(cli.NewOption("print", "print password instead of copying").WithChar('p').WithType(cli.TypeBool)).

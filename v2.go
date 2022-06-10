@@ -81,13 +81,11 @@ func containsNecessaryCharacters(s string, opts opts) bool {
 		}
 
 		escapeChars := []string{"-", "[", "]", "^"}
-		escaped := customSpecials
-
 		for _, e := range escapeChars {
-			escaped = strings.ReplaceAll(escaped, e, "\\"+e)
+			customSpecials = strings.ReplaceAll(customSpecials, e, "\\"+e)
 		}
 
-		matches, _ := regexp.MatchString(".*["+escaped+"].*", s)
+		matches, _ := regexp.MatchString(".*["+customSpecials+"].*", s)
 		if !matches {
 			return false
 		}
